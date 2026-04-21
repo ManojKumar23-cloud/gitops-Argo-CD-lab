@@ -13,7 +13,9 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: nginx
-        image: nginx:latest
+      - name: echo
+        image: hashicorp/http-echo
+        args:
+          - "-text=Hello from GitOps 🚀"
         ports:
-        - containerPort: 80
+        - containerPort: 5678
